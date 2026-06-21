@@ -4,9 +4,7 @@
 #include <stdio.h>
 
 int finalAns(int n, int a, int b) {
-    if (n - a == b - n) return b;
-
-    if (n - a > b - n) return b;
+    if (n - a >= b - n) return b;
     else return a;
 }
 
