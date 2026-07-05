@@ -31,7 +31,7 @@ int main () {
     clock_t start, end;
 
     FILE *fp;
-    // fp = fopen("best1000.txt", "r");
+    fp = fopen("best1000.txt", "r");
     // fp = fopen("best10000.txt", "r");
     // fp = fopen("best100000.txt", "r");
     // fp = fopen("worst1000.txt", "r");
@@ -39,14 +39,14 @@ int main () {
     // fp = fopen("worst100000.txt", "r");
     // fp = fopen("avg1000.txt", "r");
     // fp = fopen("avg10000.txt", "r");
-    fp = fopen("avg100000.txt", "r");
+    // fp = fopen("avg100000.txt", "r");
 
     if (fp == NULL) {
         printf("unable to open file.\n");
         return 1;
     }
 
-    int n = 100000;
+    int n = 1000; // change here
     int arry[n];
 
     for (int i=0; i<n; i++) {

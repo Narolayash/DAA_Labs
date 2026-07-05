@@ -40,15 +40,15 @@ int main () {
     // fp = fopen("worst10000.txt", "r");
     // fp = fopen("worst100000.txt", "r");
     // fp = fopen("avg1000.txt", "r");
-    // fp = fopen("avg10000.txt", "r");
-    fp = fopen("avg100000.txt", "r");
+    fp = fopen("avg10000.txt", "r");
+    // fp = fopen("avg100000.txt", "r");
 
     if (fp == NULL) {
         printf("Unable to open file.\n");
         return 1;
     }
 
-    int n = 100000; // change here
+    int n = 10000; // change here
     int arry[n];
     for (int i=0; i<n; i++) {
         fscanf(fp, "%d", &arry[i]);
