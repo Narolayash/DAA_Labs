@@ -8,6 +8,8 @@
 // Input: arr[] = [1, 2] 
 // Output: [ [1], [1, 2], [2] ]
 
+
+
 #include <stdio.h>
 
 int main () {
@@ -35,3 +37,31 @@ int main () {
 
     return 0;
 }
+
+
+
+
+
+// void subsquence(int arr[], int size, int i, int arrr[], int k) {
+//     if (i == size) {
+//         for (int j=0; j<k; j++) {
+//             printf("%d ", arrr[j]);
+//         }
+//         printf("\n");
+//         return;
+//     }
+
+//     arrr[k] = arr[i];
+//     subsquence(arr, size, i+1, arrr, k + 1);
+//     subsquence(arr, size, i+1, arrr, k);
+// }
+
+// int main() {
+//     int arr[] = {1, 2, 3, 4, 5};
+//     int size = 5;
+
+//     int arrr[size];
+//     subsquence(arr, size, 0, arrr, 0);
+
+//     return 0;
+// }
