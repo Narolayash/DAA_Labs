@@ -1,46 +1,43 @@
+// Write a program to implement quick sort algorithm. 
+
 #include <stdio.h>
 
-void swap(int *arr, int start, int end) {
-    int temp = arr[start];
-    arr[start] = arr[end];
-    arr[end] = temp;
+void swap(int *arr, int i, int j) {
+    int temp = arr[i];
+    arr[i] = arr[j];
+    arr[j] = temp;
 }
 
-void quick(int* arr, int start, int end) {
-    if (start >= end) return;
-    int i = start;
+void quickSort(int *arr, int start, int end) {
+    if (start >= end)
+        return;
+
+    int pivot = start;
+    int i = start+1;
     int j = end;
-    int pivot = arr[start];
+    
+    while (i <= j) {
+        while (i <= end && arr[pivot] > arr[i]) i++;
+        while (j >= start && arr[pivot] < arr[j]) j--;
 
-    while (start < end) {
-        while (start < j && pivot > arr[start]) {
-            start++;
-        }
-
-        end--;
-        while (end >= start && pivot < arr[end]) {
-            end--;
-        }
-
-        if (start < end) {
-            swap(arr, start, end);
-        }
-        else {
-            swap(arr, i, end);
-        }
+        if (i < j) 
+            swap(arr, i++, j--);
     }
+    swap(arr, pivot, j);
 
-    quick(arr, i, end-1);
-    quick(arr, end+1, j);
+    quickSort(arr, start, j - 1);
+    quickSort(arr, j + 1, end);
 }
 
-int main() {    
-    int arr[6] = {99, 29, 31, 1, 12, 27};
+int main() {
+    int arr[] = {7, 3, 8, 2, 4, 1};
+    int size = 6;
 
-    quick(arr, 0, 6);
+    quickSort(arr, 0, size - 1);
 
-    for (int i=0; i<6; i++) {
+    for (int i=0; i<size; i++) {
         printf("%d ", arr[i]);
     }
+
     return 0;
 }
